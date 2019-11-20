@@ -1,0 +1,88 @@
+JFDML JFormDesigner: "7.0.0.6.255" Java: "11.0.4" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class java.awt.BorderLayout ) ) {
+			name: "this"
+			"$sizePolicy": 1
+			"defaultCloseOperation": 3
+			"minimumSize": new java.awt.Dimension( 445, 170 )
+			"resizable": false
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class info.clearthought.layout.TableLayout ) {
+				"$columnSpecs": "95.0, fill"
+				"$rowSpecs": "pref, pref, pref"
+				"hGap": 5
+				"vGap": 5
+			} ) {
+				name: "panel1"
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "label_testo"
+					"text": "Testo in chiaro"
+					"focusable": false
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.TableConstraints ) )
+				add( new FormComponent( "javax.swing.JTextField" ) {
+					name: "textfiled_testo"
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.TableConstraints ) {
+					"gridX": 1
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "label_chiave"
+					"text": "Chiave"
+					"focusable": false
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.TableConstraints ) {
+					"gridY": 1
+				} )
+				add( new FormComponent( "javax.swing.JTextField" ) {
+					name: "textfield_chiave"
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.TableConstraints ) {
+					"gridX": 1
+					"gridY": 1
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "risultato"
+					"text": "Risultato"
+					"focusable": false
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.TableConstraints ) {
+					"gridY": 2
+				} )
+				add( new FormComponent( "javax.swing.JTextField" ) {
+					name: "label_risultato"
+					"editable": false
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.TableConstraints ) {
+					"gridX": 1
+					"gridY": 2
+				} )
+			}, new FormLayoutConstraints( class java.lang.String ) {
+				"value": "North"
+			} )
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class info.clearthought.layout.TableLayout ) {
+				"$columnSpecs": "fill, fill"
+				"$rowSpecs": "pref"
+				"hGap": 5
+				"vGap": 5
+			} ) {
+				name: "panel2"
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "encrypt_button"
+					"text": "Encrypt"
+					"focusable": false
+					addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "encryptButtonMouseClicked", true ) )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.TableConstraints ) )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "decrypt_button"
+					"text": "Decrypt"
+					"focusable": false
+					addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "decryptButtonMouseClicked", true ) )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.TableConstraints ) {
+					"gridX": 1
+				} )
+			}, new FormLayoutConstraints( class java.lang.String ) {
+				"value": "South"
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 0, 0 )
+			"size": new java.awt.Dimension( 445, 170 )
+		} )
+	}
+}
