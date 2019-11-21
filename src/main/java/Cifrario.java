@@ -1,18 +1,27 @@
 import java.util.Vector;
 
 public class Cifrario {
-
+    
+    //vettore contenente l'alfabeto per la cifratura e decifratura
     private Vector<Character> alfabeto = new Vector<Character>();
+    
+    //chiave per cifrare e decifrare
     private int chiave = 0;
+    
+    //variabile memorizzazione testo
     private String testo_in_chiaro = "";
+    
+    //variabile memorizzazione output
     private String output = "";
 
+    //costruttore oggetto Cifrario e inizializzazione vettore alfabeto
     public Cifrario(int chiave, String testo_in_chiaro) {
         this.chiave = chiave;
         this.testo_in_chiaro = testo_in_chiaro;
         setupAlfabeto();
     }
 
+    //inizializzazione alfabeto
     private void setupAlfabeto() {
         alfabeto.addElement('a');
         alfabeto.addElement('b');
@@ -42,6 +51,7 @@ public class Cifrario {
         alfabeto.addElement('z');
     }
 
+    //metodo per ricerca indice carattere nel vettore
     private int trovato(char tofind) {
         for (int i = 0; i < alfabeto.size(); i++) {
             if (alfabeto.contains(tofind)) {
@@ -51,9 +61,14 @@ public class Cifrario {
         return 0;
     }
 
+    //metodo per cifrare il testo
     public void cifra() {
+        //riduzione testo in LowerCase
         String temp_input = testo_in_chiaro.toLowerCase();
+        
         String temp_output = "";
+        
+        //ciclo iterativo per cifrare il testo
         for (char carattere : temp_input.toCharArray()) {
             int next_index = trovato(carattere) + chiave;
             int temp = 0;
@@ -64,10 +79,14 @@ public class Cifrario {
                 temp_output += alfabeto.elementAt(temp);
             }
         }
+        
+        //impostazione variabile per output
         setOutput(temp_output.toUpperCase());
     }
 
+    //metodo per decifrare il testo
     public void decifra() {
+        //riduzione testo in LowerCase
         String temp_input = testo_in_chiaro.toLowerCase();
         String temp_output = "";
         for (char carattere : temp_input.toCharArray()) {
@@ -80,6 +99,7 @@ public class Cifrario {
                 temp_output += alfabeto.elementAt(temp);
             }
         }
+        //impostazione variabile per output
         setOutput(temp_output.toUpperCase());
     }
 
